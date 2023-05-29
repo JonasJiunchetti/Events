@@ -31,7 +31,7 @@ public class EventActivity {
 
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // For large descriptions
     private String description;
 
     private Double price;
@@ -41,7 +41,7 @@ public class EventActivity {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Category categories;
+    private Category category;
 
     @OneToMany(mappedBy = "activity")
     private Set<Schedule> schedules = new HashSet<>();
